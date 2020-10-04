@@ -26,6 +26,7 @@ import java.util.Random;
 
 import static com.example.airdrop.App.DOWNLOAD_CHANNEL_ID;
 import static com.example.airdrop.App.SERVICE_CHANNEL_ID;
+import static com.example.airdrop.Constants.SERVER_HOST;
 
 public class AirDropPullService extends Service {
     private static final String TAG = "AirDropPullService";
@@ -57,7 +58,7 @@ public class AirDropPullService extends Service {
 //        Log.d(TAG, "onStartCommand: Starting Thread");
 //        Log.d(TAG, "onStartCommand: RUN_POLL=" + RUN_POLL);
 
-        PollSubscription pollSubscription = new PollSubscription(this, "https://air-drop.srinibasmisra.com/api/pull", "https://air-drop.srinibasmisra.com/api/download?file=");
+        PollSubscription pollSubscription = new PollSubscription(this, SERVER_HOST + "/api/pull", SERVER_HOST + "/api/download?file=");
         new Thread(pollSubscription).start();
 
         Toast.makeText(this, "Starting pull service!", Toast.LENGTH_LONG).show();
