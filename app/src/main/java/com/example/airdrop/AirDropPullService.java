@@ -103,7 +103,7 @@ public class AirDropPullService extends Service {
                     HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
                     httpURLConnection.setRequestMethod("GET");
 
-                    int responseCode = httpURLConnection.getResponseCode();
+                    final int responseCode = httpURLConnection.getResponseCode();
 //                    Log.d(TAG, "run: ResponseCode=" + responseCode);
 
                     if (responseCode == HttpURLConnection.HTTP_OK){
@@ -156,6 +156,14 @@ public class AirDropPullService extends Service {
                         }
 
                         in.close();
+                    }
+                    else {
+                        serviceHandler.post(new Runnable() {
+                            @Override
+                            public void run() {
+                                Toast.makeText(context, "Error! HTTP " + responseCode, Toast.LENGTH_SHORT).show();
+                            }
+                        });
                     }
                 }
                 catch (Exception e) {

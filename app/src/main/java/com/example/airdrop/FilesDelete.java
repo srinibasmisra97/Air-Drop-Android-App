@@ -155,7 +155,7 @@ public class FilesDelete extends AppCompatActivity {
                 HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
                 httpURLConnection.setRequestMethod("GET");
 
-                int responseCode = httpURLConnection.getResponseCode();
+                final int responseCode = httpURLConnection.getResponseCode();
 
                 if (responseCode == HttpURLConnection.HTTP_OK){
                     BufferedReader in = new BufferedReader(new InputStreamReader(httpURLConnection.getInputStream()));
@@ -190,6 +190,14 @@ public class FilesDelete extends AppCompatActivity {
                         @Override
                         public void run() {
                             Toast.makeText(context, filesList.length() + " files loaded!", Toast.LENGTH_SHORT).show();
+                        }
+                    });
+                }
+                else {
+                    mainHandler.post(new Runnable() {
+                        @Override
+                        public void run() {
+                            Toast.makeText(context, "Error! HTTP " + responseCode, Toast.LENGTH_SHORT).show();
                         }
                     });
                 }
