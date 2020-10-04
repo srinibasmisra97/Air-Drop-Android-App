@@ -25,4 +25,9 @@ public class MainActivity extends AppCompatActivity {
         Intent serviceIntent = new Intent(this, AirDropPullService.class);
         stopService(serviceIntent);
     }
+
+    public void openFilesDownloadActivity(View v){
+        Intent intent = new Intent(this, FilesDownload.class);
+        startActivity(intent);
+    }
 }
