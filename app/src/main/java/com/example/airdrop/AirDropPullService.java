@@ -26,6 +26,7 @@ import java.util.Random;
 
 import static com.example.airdrop.App.DOWNLOAD_CHANNEL_ID;
 import static com.example.airdrop.App.SERVICE_CHANNEL_ID;
+
 import static com.example.airdrop.Constants.SERVER_HOST;
 
 public class AirDropPullService extends Service {
