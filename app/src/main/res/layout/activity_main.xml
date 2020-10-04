@@ -27,4 +27,23 @@
         android:text="All Files"
         android:onClick="openFilesDownloadActivity"/>
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="API Server Logs"
+        android:onClick="openServerLogs"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nginx Access Logs"
+        android:onClick="openNginxLogs"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Health Check"
+        android:onClick="healthCheck"/>
+
+
 </LinearLayout>
