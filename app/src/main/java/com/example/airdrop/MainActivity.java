@@ -42,6 +42,11 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void openDeleteFilesActivity(View v){
+        Intent intent = new Intent(this, FilesDelete.class);
+        startActivity(intent);
+    }
+
     public void openNginxLogs(View v){
         Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(SERVER_HOST + "/lg/nginx.access.txt"));
         startActivity(intent);

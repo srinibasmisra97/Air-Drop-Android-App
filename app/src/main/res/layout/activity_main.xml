@@ -30,6 +30,12 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:text="Delete Files"
+        android:onClick="openDeleteFilesActivity"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:text="API Server Logs"
         android:onClick="openServerLogs"/>
 
