@@ -17,16 +17,19 @@
             android:layout_height="wrap_content"
             android:id="@+id/filesDeleteInternalLayout"
             android:orientation="vertical"
-            android:gravity="top" />
-    </ScrollView>
+            android:gravity="top">
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Delete"
-        android:textAlignment="center"
-        android:gravity="bottom"
-        android:onClick="filesDelete"
-        tools:ignore="RtlCompat" />
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Delete"
+                android:textAlignment="center"
+                android:gravity="bottom"
+                android:onClick="filesDelete"
+                tools:ignore="RtlCompat"/>
+
+        </LinearLayout>
+
+    </ScrollView>
 
 </LinearLayout>
